@@ -18,10 +18,10 @@ const cargarPublicacion = async() => {
 
   for (let i = 0; i < 10; i++) {
 
-    const respuesta = await api.get('/cat/gif/says/Hello?filter=mono&fontColor=orange&fontSize=20&type=square')
+    const respuesta = await api.get(`/cat/gif/says/Hello?filter=mono&fontColor=orange&fontSize=20&type=square&random=${i}`)
    
     nuevaPublis.push({
-      imagen: respuesta.data,
+      imagen: respuesta.request.responseURL, //rresponse data rompe lo que trae
       nombreUser: `Usuario_${i}`,
       descripcion: `Gatito numero ${i} en accion ostras!`,
       cantLike: Math.floor(Math.random() * 1000),
