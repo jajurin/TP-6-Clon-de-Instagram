@@ -1,4 +1,5 @@
 export interface Publicaciones {
+    id: number
     imagen: string;
     nombreUser: string;
     descripcion: string;

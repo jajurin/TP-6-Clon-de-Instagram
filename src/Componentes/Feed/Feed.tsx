@@ -1,18 +1,17 @@
 import Publicacion from "../Publicacion/Publicacion";
 
-function Feed({ Publicaciones }) {
+function Feed({ Publicaciones, onSelect }) {
 
   return (
     <div>
 
       <ul>
-        {Publicaciones.map((p, index) => (
-
+        {Publicaciones.map((p) => (
           <Publicacion
-            key={index}
+            key={p.id}
             publicacion={p}
+            onSelect={() => onSelect(p.id)}
           />
-
         ))}
       </ul>
 
