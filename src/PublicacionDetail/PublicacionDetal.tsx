@@ -1,4 +1,4 @@
-import type { Publicaciones } from '../Componentes/Publicaciones'
+import type { Publicaciones } from '../Componentes/Interfaces/Publicaciones'
 
 interface PublicionDetailProps {
   PublicacioneElegida: Publicaciones
@@ -8,12 +8,15 @@ function PublicionDetail({ PublicacioneElegida }: PublicionDetailProps) {
   return (
     <div className="details">
       <div className="details-card">
-        <strong>{PublicacioneElegida.nombreUser}</strong>
-
+        <strong>{PublicacioneElegida.perfil.nombreUser}</strong>
+                <img src={PublicacioneElegida.perfil.imagen} />
+         
         <img
           src={PublicacioneElegida.imagen}
-          alt={PublicacioneElegida.nombreUser}
+          alt={PublicacioneElegida.perfil.nombreUser}
         />
+
+     
 
         <p><b>Descripcion:</b> {PublicacioneElegida.descripcion}</p>
         <p><b>Likes:</b> {PublicacioneElegida.cantLike}</p>
