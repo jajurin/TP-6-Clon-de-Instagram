@@ -1,0 +1,24 @@
+.storiesContainer{
+    width: 100%;
+    padding: 20px 0px;
+}
+
+
+
+.storiesContainer h1{
+    color: white;
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+
+
+
+.storiesLista{
+    display: flex;
+    align-items: center;
+    gap: 30px;  
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

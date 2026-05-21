@@ -4,30 +4,59 @@ import reels from '../../assets/reels.png'
 import igtv from '../../assets/igtv.png'
 import notificacion from '../../assets/notificacion.png'
 
+import './PerfilUsuario.css'
+
 function PerfilUsuario({ Perfil }) {
 
     return (
-        <div className="perfil-container">
 
-            <img 
-                src={Perfil.imagen} 
+        <div className="perfil-container">
+            <img
+                className='perfil-img'
+                src={Perfil.imagen}
                 alt={Perfil.nombreUser}
             />
-
             <h2>{Perfil.nombreUser}</h2>
+            <p className='alias'>@{Perfil.alias}</p>
+            <div className='stats'>
 
-            <p>{Perfil.alias}</p>
+                <div className='stat-box'>
+                    <p>{Perfil.seguidores}</p>
+                </div>
 
-            <p>Seguidores: {Perfil.seguidores}</p>
+                <div className='stat-box'>
+                    <p>{Perfil.cantLike}</p>
+                </div>
 
-            <p>Likes: {Perfil.cantLike}</p>
+            </div>
+            <div className='menu'>
 
-            <img src={homeSelect} alt={Perfil.nombreUser} />
-            <img src={Explore} alt={Perfil.nombreUser} />
-            <img src={reels} alt={Perfil.nombreUser} />
-            <img src={igtv} alt={Perfil.nombreUser} />
-            <img src={notificacion} alt={Perfil.nombreUser} />
+                <div className='menu-item activo'>
+                    <img src={homeSelect} alt="home" />
+                    <p>Home</p>
+                </div>
 
+                <div className='menu-item'>
+                    <img src={Explore} alt="explore" />
+                    <p>Explore</p>
+                </div>
+
+                <div className='menu-item'>
+                    <img src={reels} alt="reels" />
+                    <p>Reels</p>
+                </div>
+
+                <div className='menu-item'>
+                    <img src={igtv} alt="igtv" />
+                    <p>IGTV</p>
+                </div>
+
+                <div className='menu-item'>
+                    <img src={notificacion} alt="notification" />
+                    <p>Notification</p>
+                </div>
+
+            </div>
 
         </div>
     )
