@@ -1,11 +1,15 @@
 import Publicacion from "../Publicacion/Publicacion";
+import './Feed.css'
 
 function Feed({ Publicaciones, onSelect }) {
 
   return (
-    <div>
-<h1>TRENDING</h1>
-      <ul>
+    <div className="feedContainer">
+
+      <h1>TRENDING</h1>
+
+      <ul className="feedLista">
+
         {Publicaciones.map((p) => (
           <Publicacion
             key={p.id}
@@ -13,6 +17,7 @@ function Feed({ Publicaciones, onSelect }) {
             onSelect={() => onSelect(p.id)}
           />
         ))}
+
       </ul>
 
     </div>

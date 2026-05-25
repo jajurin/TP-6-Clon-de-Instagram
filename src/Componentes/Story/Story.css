@@ -1,50 +1,40 @@
+
 .storyItem{
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    cursor: pointer;
 }
 
-
 .storyBorde{
-    width: 95px;
-    height: 95px;
+    width: 90px;
+    height: 90px;
+    padding: 3px;
 
-    border-radius: 75%;
+    border-radius: 50%;
 
     background: linear-gradient(
         45deg,
-        #feda75,
-        #fa7e1e,
-        #d62976,
-        #962fbf,
-        #4f5bd5
+        #ff00cc,
+        #ff0055,
+        #ff7700
     );
-
-    padding: 6px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-
 .storyBorde img{
     width: 100%;
     height: 100%;
-
     border-radius: 50%;
     object-fit: cover;
 
-    border: 3px solid #070321;
+    border: 4px solid #060628;
 }
-
 
 .storyItem h2{
     color: white;
-    font-size: 13px;
-    font-weight: 400;
-
-    margin-top: 10px;
+    font-size: 11px;
+    margin-top: 8px;
 }

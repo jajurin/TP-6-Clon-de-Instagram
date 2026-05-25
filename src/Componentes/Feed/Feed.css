@@ -1,0 +1,26 @@
+
+.feedContainer{
+    position: absolute;
+    top: 230px;
+    left: 260px;
+
+    width: calc(100% - 300px);
+
+    padding: 20px;
+}
+
+.feedContainer h1{
+    color: white;
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.feedLista{
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(3, 280px);
+    gap: 25px;
+
+    padding: 0;
+}

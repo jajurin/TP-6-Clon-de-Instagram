@@ -1,24 +1,19 @@
 .storiesContainer{
-    width: 100%;
-    padding: 20px 0px;
+    position: absolute;
+    top: 40px;
+    left: 260px;
+    width: calc(100% - 260px);
+    padding: 20px;
 }
-
-
 
 .storiesContainer h1{
     color: white;
-    font-size: 50px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
-
-
 
 .storiesLista{
     display: flex;
-    align-items: center;
-    gap: 30px;  
-
+    gap: 25px;
     list-style: none;
     padding: 0;
-    margin: 0;
 }

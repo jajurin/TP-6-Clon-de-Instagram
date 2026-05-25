@@ -1,131 +1,136 @@
-/* PerfilUsuario.css */
 
 .perfil-container{
-    width: 280px;
-    min-height: 100vh;
+    position: fixed;
 
-    background-color: #070321;
+    left: 0;
+    top: 0;
+
+    width: 190px;
+    height: 100vh;
+
+    background-color: #040427;
+
+    padding-top: 90px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    padding-top: 40px;
-
-    border-right: 1px solid rgba(255,255,255,0.08);
 }
 
-/* FOTO PERFIL */
-
 .perfil-img{
-    width: 160px;
-    height: 160px;
+    width: 110px;
+    height: 110px;
 
     border-radius: 50%;
 
     object-fit: cover;
 
-    border: 4px solid #d62976;
-    padding: 4px;
-}
+    padding: 3px;
 
-/* NOMBRE */
+    background: linear-gradient(
+        45deg,
+        #ff00c8,
+        #ff0055,
+        #ff8800
+    );
+
+    margin-bottom: 15px;
+}
 
 .perfil-container h2{
     color: white;
-    font-size: 28px;
 
-    margin-top: 20px;
-    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 700;
+
+    margin: 0;
 }
-
-/* USER */
 
 .alias{
-    color: #8f8f8f;
-    font-size: 18px;
+    color: #b7b7d6;
 
+    margin-top: 8px;
     margin-bottom: 25px;
-}
 
-/* CAJAS */
+    font-size: 14px;
+}
 
 .stats{
     display: flex;
-    gap: 20px;
+    gap: 15px;
 
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .stat-box{
-    width: 110px;
-    height: 50px;
+    width: 60px;
+    height: 35px;
 
-    background-color: #1a1a3a;
+    background-color: #1b1c4d;
 
-    border-radius: 10px;
+    border-radius: 8px;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
 }
 
 .stat-box p{
     color: white;
-    font-size: 18px;
-}
 
-/* MENU */
+    font-size: 14px;
+    font-weight: 600;
+}
 
 .menu{
     width: 100%;
 
     display: flex;
     flex-direction: column;
-    gap: 10px;
+
+    margin-top: 10px;
 }
 
-/* ITEM */
-
 .menu-item{
-    width: 90%;
-    height: 60px;
+    width: 100%;
+    height: 58px;
 
     display: flex;
     align-items: center;
-    gap: 20px;
 
-    padding-left: 30px;
+    gap: 18px;
 
-    border-radius: 0px 12px 12px 0px;
+    padding-left: 22px;
 
     cursor: pointer;
 
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 .menu-item:hover{
-    background-color: #1a1a3a;
+    background-color: #1a1d46;
 }
 
-/* HOME SELECCIONADO */
+.menu-item svg{
+    width: 26px;
+    height: 26px;
 
-.activo{
-    background-color: #1a1a3a;
-
-    border-left: 4px solid #d62976;
+    fill: white;
 }
 
-/* ICONOS */
-
-.menu-item img{
-    width: 30px;
+.menu-item path{
+    fill: white;
 }
-
-/* TEXTO */
 
 .menu-item p{
     color: white;
-    font-size: 18px;
+
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.activo{
+    background-color: #23255a;
+
+    border-left: 4px solid #ff3ea5;
 }
