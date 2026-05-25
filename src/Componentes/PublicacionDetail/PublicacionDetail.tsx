@@ -1,5 +1,5 @@
-import type { Publicaciones } from '../Componentes/Interfaces/Publicaciones'
-
+import type { Publicaciones } from '../Interfaces/Publicaciones'
+import './PublicacionDetail.css'
 interface PublicionDetailProps {
   PublicacioneElegida: Publicaciones
 }
