@@ -1,4 +1,5 @@
 import type { Perfiles } from "./Perfiles";
+import type { Comentarios } from "./Comentarios";
 export interface Publicaciones {
     id: number
     nombreUsuario: string;
@@ -6,7 +7,7 @@ export interface Publicaciones {
     imagen: string;
     descripcion: string;
     cantLike: number;
-    comentarios: string[];
+   comentarios: Comentarios[];
     fecha: Date;
     perfil: Perfiles;
 }

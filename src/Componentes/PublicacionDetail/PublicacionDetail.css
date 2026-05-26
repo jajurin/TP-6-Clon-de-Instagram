@@ -1,106 +1,256 @@
-
-.details{
+/* Backdrop oscuro que cubre toda la pantalla */
+.details-backdrop {
     position: fixed;
-
     top: 0;
     left: 0;
-
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-
-    background-color: rgba(0,0,0,0.75);
-
+    background-color: rgba(0, 0, 0, 0.85);
     display: flex;
     justify-content: center;
     align-items: center;
-
-    z-index: 999;
+    z-index: 2000;
 }
-.volver{
+
+/* Botón flotante para cerrar en la esquina superior derecha */
+.cerrar-modal {
     position: absolute;
-
-    top: 30px;
-    left: 30px;
-
-    z-index: 1000;
-
-    background-color: #ff3e8a;
-
+    top: 20px;
+    right: 20px;
+    background: none;
     border: none;
-
     color: white;
-
-    padding: 12px 20px;
-
-    border-radius: 10px;
-
+    font-size: 24px;
     cursor: pointer;
-
-    font-size: 16px;
-
-    font-weight: bold;
+    z-index: 2100;
+    transition: transform 0.2s;
 }
-.details-card{
-    width: 500px;
-
-    background-color: #17193f;
-
-    border-radius: 18px;
-
-    padding: 25px;
-
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
-
-    color: white;
-
-    animation: aparecer 0.25s ease;
+.cerrar-modal:hover {
+    transform: scale(1.1);
 }
 
-.details-card strong{
-    display: block;
-
-    font-size: 22px;
-
-    margin-bottom: 20px;
+/* Estructura del Modal estilo Instagram */
+.instagram-modal {
+    display: flex;
+    width: 85vw;
+    max-width: 1100px;
+    height: 85vh;
+    max-height: 750px;
+    background-color: #0b0d2a; /* Integrado al fondo oscuro de tu app */
+    border: 1px solid #1e224d;
+    border-radius: 4px; /* Instagram usa bordes casi rectos o muy sutiles */
+    overflow: hidden;
+    animation: aparecerModal 0.2s cubic-bezier(0.1, 0.8, 0.25, 1);
 }
 
-.details-card img:first-of-type{
-    width: 60px;
-    height: 60px;
-
-    border-radius: 50%;
-
-    object-fit: cover;
-
-    margin-bottom: 15px;
+/* --- COLUMNA IZQUIERDA: IMAGEN --- */
+.modal-izquierda {
+    flex: 1.2; /* Toma más espacio proporcional */
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.details-card img:last-of-type{
+.imagen-principal {
     width: 100%;
-
-    border-radius: 14px;
-
-    margin-bottom: 20px;
+    height: 100%;
+    object-fit: contain; /* Evita que la imagen del gato se deforme o recorte mal */
 }
 
-.details-card p{
-    margin-bottom: 12px;
+/* --- COLUMNA DERECHA: INFORMACIÓN --- */
+.modal-derecha {
+    flex: 0.9;
+    display: flex;
+    flex-direction: column; /* Apila elementos verticalmente */
+    background-color: #070926; /* Color un tono más oscuro para contraste */
+    border-left: 1px solid #1e224d;
+}
 
-    font-size: 15px;
+/* 1. Header */
+.modal-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #1e224d;
+    gap: 12px;
+}
 
+.avatar-usuario {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ff3ea5;
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-info strong {
+    color: white;
+    font-size: 14px;
+}
+
+.user-alias {
+    color: #6d6e9c;
+    font-size: 12px;
+}
+
+/* 2. Zona central de comentarios (Se lleva el mayor espacio dinámico) */
+.modal-comentarios-area {
+    flex: 1; 
+    overflow-y: auto; /* Scroll vertical independiente */
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Quitar scrollbar visual en navegadores modernos pero mantener funcionamiento */
+.modal-comentarios-area::-webkit-scrollbar {
+    width: 6px;
+}
+.modal-comentarios-area::-webkit-scrollbar-thumb {
+    background-color: #1e224d;
+    border-radius: 10px;
+}
+
+.comentario-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.avatar-comentario {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.comentario-item p {
     color: #d9d9f3;
+    margin: 0;
 }
 
-@keyframes aparecer{
+.comentario-item strong {
+    color: white;
+    margin-right: 6px;
+}
 
-    from{
-        transform: scale(0.8);
+/* Distinción sutil para la descripción original */
+.descripcion-post {
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(30, 34, 77, 0.4);
+}
+
+/* 3. Footer de Acciones (Likes, Iconos) */
+.modal-footer-acciones {
+    padding: 15px;
+    border-top: 1px solid #1e224d;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #070926;
+}
+
+.iconos-acciones {
+    display: flex;
+    gap: 15px;
+    color: white;
+}
+
+.iconos-acciones svg {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.iconos-acciones svg:hover {
+    transform: scale(1.05);
+    color: #ff3ea5;
+}
+
+.likes-count {
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.post-fecha {
+    color: #6d6e9c;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 4. Barra inferior fija "Agregar Comentario" */
+.modal-agregar-comentario {
+    padding: 15px;
+    border-top: 1px solid #1e224d;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #070926;
+}
+
+.modal-agregar-comentario input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 14px;
+}
+
+.modal-agregar-comentario input::placeholder {
+    color: #52547a;
+}
+
+.btn-publicar {
+    background: none;
+    border: none;
+    color: #0095f6; /* Azul clásico de interacción de Instagram */
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-publicar:hover {
+    color: white;
+}
+
+/* Animación de entrada suave del modal */
+@keyframes aparecerModal {
+    from {
+        transform: scale(1.05);
         opacity: 0;
     }
-
-    to{
+    to {
         transform: scale(1);
         opacity: 1;
     }
+}
 
+/* Responsive para pantallas chicas: Apilar en vertical si la pantalla colapsa */
+@media (max-width: 800px) {
+    .instagram-modal {
+        flex-direction: column;
+        height: 95vh;
+        width: 95vw;
+    }
+    .modal-izquierda {
+        flex: 1;
+    }
+    .modal-derecha {
+        flex: 1;
+    }
 }
