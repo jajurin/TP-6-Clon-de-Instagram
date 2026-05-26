@@ -64,8 +64,8 @@ const comentariosFake: Comentarios[] =
       usuario:
         nuevosPerfiles[
           Math.floor(
-            Math.random() *
-            nuevosPerfiles.length
+            Math.random() *(99-
+            (nuevosPerfiles.length+1)) + nuevosPerfiles.length+1
           )
         ],
 
