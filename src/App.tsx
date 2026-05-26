@@ -8,6 +8,7 @@ import Encabezado from './Componentes/Encabezado/Encabezado'
 import type { Perfiles } from './Componentes/Interfaces/Perfiles'
 import Stories from './Componentes/Stories/Stories'
 import PerfilUsuario from './Componentes/perfilUsuario/perfilUsuario'
+import Loading from './Componentes/Loader/Loader'
 
 function App() {
   const [Publicaciones, setPublicaciones] = useState<Publicaciones[]>([])

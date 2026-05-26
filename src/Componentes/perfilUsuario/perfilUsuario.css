@@ -124,14 +124,14 @@
 .menu-item{
     width: 100%;
 
-    height: 58px;
+    min-height: 75px;
 
     display: flex;
     align-items: center;
 
-    gap: 18px;
+    gap: 22px;
 
-    padding-left: 22px;
+    padding: 0 25px;
 
     cursor: pointer;
 
@@ -145,23 +145,21 @@
 }
 
 .menu-item svg{
-    width: 26px;
-    height: 26px;
+    width: 32px;
+    height: 32px;
 
-    fill: white;
-}
-
-.menu-item path{
     fill: white;
 }
 
 .menu-item p{
     color: white;
 
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 600;
 }
-
+.menu-item path{
+    fill: white;
+}
 .activo{
     background-color: #23255a;
 
