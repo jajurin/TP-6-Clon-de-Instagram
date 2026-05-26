@@ -16,7 +16,30 @@
 
     z-index: 999;
 }
+.volver{
+    position: absolute;
 
+    top: 30px;
+    left: 30px;
+
+    z-index: 1000;
+
+    background-color: #ff3e8a;
+
+    border: none;
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
 .details-card{
     width: 500px;
 

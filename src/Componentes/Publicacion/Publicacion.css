@@ -1,66 +1,82 @@
-
 .publicacionItem{
-    background-color: #1a1d46;
-
-    border-radius: 12px;
-
+    background-color: #0b0d2a;
+    border-radius: 16px;
     overflow: hidden;
-
     cursor: pointer;
-
     transition: 0.3s;
+    box-shadow: 0 0 20px rgba(0,0,0,0.25);
 }
 
 .publicacionItem:hover{
     transform: scale(1.03);
+    box-shadow: 0 0 30px rgba(0,0,0,0.45);
+}
+
+.imagenPublicacion{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.publicacionItem:hover .imagenPublicacion{
+    filter: brightness(1.05);
+}
+
+/* NUEVO */
+.footerPublicacion{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 14px;
 }
 
 .publicacionHeader{
     display: flex;
     align-items: center;
-    gap: 10px;
-
-    padding: 12px;
+    gap: 12px;
 }
 
 .publicacionHeader img{
-    width: 40px;
-    height: 40px;
-
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
-
     object-fit: cover;
+    border: 2px solid #ff3ea5;
 }
 
 .publicacionHeader h2{
     color: white;
-    font-size: 14px;
-}
-
-.imagenPublicacion{
-    width: 100%;
-    height: 300px;
-
-    object-fit: cover;
-}
-
-.descripcionPublicacion{
-    color: white;
-
-    font-size: 14px;
-
-    padding: 10px 12px;
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .botonesPublicacion{
     display: flex;
     align-items: center;
-    gap: 15px;
-
-    padding: 0 12px 15px;
+    gap: 18px;
 }
 
-.botonesPublicacion img{
-    width: 22px;
+.botonesPublicacion svg{
+    width: 24px;
+    height: 24px;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.botonesPublicacion svg path{
+    stroke: white;
+    fill: transparent;
+}
+.botonesPublicacion svg:hover{
+    transform: scale(1.12);
+    opacity: 0.8;
+}
+.botonesPublicacion svg:hover path{
+    stroke: #ff3ea5;
+}
+.botonesPublicacion svg:first-child{
+    width: 30px;
+    height: 30px;
 }

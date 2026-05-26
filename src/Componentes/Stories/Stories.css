@@ -1,9 +1,14 @@
 .storiesContainer{
     position: absolute;
+
     top: 40px;
     left: 260px;
+
     width: calc(100% - 260px);
+
     padding: 20px;
+
+    box-sizing: border-box;
 }
 
 .storiesContainer h1{
@@ -13,7 +18,14 @@
 
 .storiesLista{
     display: flex;
-    gap: 25px;
+
+    flex-wrap: wrap;
+
+    gap: 40px;
+
     list-style: none;
+
     padding: 0;
+
+    width: 100%;
 }

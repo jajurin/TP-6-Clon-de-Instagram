@@ -14,8 +14,8 @@ function Feed({ Publicaciones, onSelect }) {
           <Publicacion
             key={p.id}
             publicacion={p}
-            onSelect={() => onSelect(p.id)}
-          />
+              onSelect={() => onSelect(p.id)}
+            />
         ))}
 
       </ul>

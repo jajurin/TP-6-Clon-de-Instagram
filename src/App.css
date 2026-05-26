@@ -1,5 +1,6 @@
-main{
-    background-color: rgba(11, 14, 39);
+body{
+    margin: 0;
+    background-color: #0b0d2a;
 }
 h1,p,h2{
     color: rgba(245, 245, 245);

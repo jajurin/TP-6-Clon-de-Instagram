@@ -69,8 +69,8 @@
 
 
 .iconos svg{
-    width: 28px;
-    height: 28px;
+    width: 35px;
+    height: 35px;
     cursor: pointer;
 }
 
@@ -84,7 +84,7 @@
 
 
 .nuevoPost{
-    width: 120px;
+    width: 145px;
     cursor: pointer;
 }
 

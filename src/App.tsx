@@ -13,6 +13,7 @@ function App() {
   const [Publicaciones, setPublicaciones] = useState<Publicaciones[]>([])
 const [PublicacioneEle, setPublicacioneEle] = useState<Publicaciones | null>(null)
 const [Perfiles, setPerfiles] = useState<Perfiles[]>([])
+const [loading, setLoading] = useState<boolean>(true)
 
 
   useEffect(() => {
@@ -31,7 +32,7 @@ const [Perfiles, setPerfiles] = useState<Perfiles[]>([])
         imagen: respuesta.request.responseURL,
         biografia: `Amante de los gatos profesional`,
         cantPubl: 1,
-        nombreUser: `Mi_Usuario_Gatito_${i + 1}`,
+        nombreUser: `Mi__Gatito_${i + 1}`,
         alias: `@gatito_${i + 1}`,
         seguidores: Math.floor(Math.random() * 1000),
         cantLike: Math.floor(Math.random() * 1000),
@@ -62,6 +63,7 @@ const [Perfiles, setPerfiles] = useState<Perfiles[]>([])
     }
 
     setPublicaciones(nuevaPublis)
+    setLoading(false)
   }
 
   cargarDatos()
@@ -92,6 +94,7 @@ const handleSelectPublicacion = (idEl: number) => {
       {PublicacioneEle && (
         <PublicionDetail
           PublicacioneElegida={PublicacioneEle}
+          onSelect={handleSelectPublicacion}
         />
       )}
   </main>
