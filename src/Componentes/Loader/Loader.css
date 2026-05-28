@@ -1,37 +1,7 @@
 .DivLoader{
-    width: 100%;
-    height: 400px;
-
-    background-color: #111433;
-
-    border-radius: 18px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    animation: pulse 1.2s infinite;
+    margin-left: 35%;
+    margin-top: 15%;
 }
-
-.DivLoader p{
-    color: white;
-
-    font-size: 22px;
-    font-weight: 700;
-
-    letter-spacing: 1px;
-}
-
-@keyframes pulse{
-    0%{
-        opacity: 0.6;
-    }
-
-    50%{
-        opacity: 1;
-    }
-
-    100%{
-        opacity: 0.6;
-    }
+.DivLoader img{
+    size: 200%;
 }

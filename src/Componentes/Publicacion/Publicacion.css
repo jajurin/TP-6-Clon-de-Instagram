@@ -23,7 +23,7 @@
     filter: brightness(1.05);
 }
 
-/* NUEVO */
+
 .footerPublicacion{
     display: flex;
     justify-content: space-between;
@@ -79,4 +79,10 @@
 .botonesPublicacion svg:first-child{
     width: 30px;
     height: 30px;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+.likeActivo path{
+    stroke: red !important;
+    fill: red !important;
 }

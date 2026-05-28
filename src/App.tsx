@@ -9,16 +9,19 @@ import type { Perfiles } from './Componentes/Interfaces/Perfiles'
 import Stories from './Componentes/Stories/Stories'
 import PerfilUsuario from './Componentes/perfilUsuario/perfilUsuario'
 import type { Comentarios } from './Componentes/Interfaces/Comentarios'
+import Loading from './Componentes/Loader/Loader'
 
 function App() {
   const [Publicaciones, setPublicaciones] = useState<Publicaciones[]>([])
   const [PublicacioneEle, setPublicacioneEle] = useState<Publicaciones | null>(null)
   const [Perfiles, setPerfiles] = useState<Perfiles[]>([])
+  const [loading, setLoading] = useState(true)
 
 
   useEffect(() => {
     const cargarDatos = async () => {
 
+     setLoading(true)
 
       const nuevosPerfiles: Perfiles[] = []
       for (let i = 0; i < 10; i++) {
@@ -45,13 +48,14 @@ function App() {
 
       for (let i = 0; i < 10; i++) {
         const respuesta = await api.get(
-          `/cat/gif/says/Hello?filter=mono&fontColor=orange&fontSize=20&type=square&random=${i + 1}`
+          `/cat/gif/says/Jaju y Alan?filter=mono&fontColor=orange&fontSize=20&type=square&random=${i + 1}`
         )
         
        const respuestaComentarios =
   await apiComentarios.get('https://api.api-ninjas.com/v2/quotes?categories=success%2Cwisdom&limit=5')
 
 const comentariosFake: Comentarios[] =
+
   respuestaComentarios.data.map(
     (quote: any, index: number) => ({
 
@@ -90,6 +94,7 @@ const comentariosFake: Comentarios[] =
       }
 
       setPublicaciones(nuevaPublis)
+      setLoading(false)
  
     }
 
@@ -107,28 +112,40 @@ const comentariosFake: Comentarios[] =
     setPublicacioneEle(publiEncontrada ?? null)
   }
 
- 
-  return (
-    <main>
-      <Encabezado />
-      {Perfiles[7] && (
-        <PerfilUsuario Perfil={Perfiles[7]} />
-      )}
-      <Stories 
-        Perfiles={Perfiles}
-      />
-      <Feed
-        Publicaciones={Publicaciones}
+
+return (
+  <main>
+
+    <Encabezado />
+
+    {Perfiles[7] && (
+      <PerfilUsuario Perfil={Perfiles[7]} />
+    )}
+
+    
+
+  {loading ? (
+  <Loading />
+) : (
+  <>
+    <Stories Perfiles={Perfiles} />
+
+    <Feed
+      Publicaciones={Publicaciones}
+      onSelect={handleSelectPublicacion}
+    />
+  </>
+)}
+
+    {PublicacioneEle && (
+      <PublicionDetail
+        PublicacioneElegida={PublicacioneEle}
         onSelect={handleSelectPublicacion}
       />
-      {PublicacioneEle && (
-        <PublicionDetail
-          PublicacioneElegida={PublicacioneEle}
-          onSelect={handleSelectPublicacion}
-        />
-      )}
-    </main>
-  )
+    )}
+
+  </main>
+)
 }
 
 export default App
