@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import './Publicacion.css'
 
-function Publicacion({ publicacion, onSelect }) {
+function Publicacion({ publicacion, onSelect, setLike, Like }) {
 
-  const [like, setLike] = useState(false)
 
   return (
 
@@ -36,10 +35,10 @@ function Publicacion({ publicacion, onSelect }) {
 <svg
   onClick={(e) => {
     e.stopPropagation()
-    setLike(!like)
+    setLike(!Like)
   }}
 
-  className={like ? "likeActivo" : ""}
+  className={Like ? "likeActivo" : ""}
 
   viewBox="0 0 20 20"
   fill="none"

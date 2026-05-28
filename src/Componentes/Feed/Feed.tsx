@@ -1,7 +1,7 @@
 import Publicacion from "../Publicacion/Publicacion";
 import './Feed.css'
 
-function Feed({ Publicaciones, onSelect }) {
+function Feed({ Publicaciones, onSelect, setLike, Like }) {
 
   return (
     <div className="feedContainer">
@@ -14,8 +14,10 @@ function Feed({ Publicaciones, onSelect }) {
           <Publicacion
             key={p.id}
             publicacion={p}
-              onSelect={() => onSelect(p.id)}
-            />
+            onSelect={() => onSelect(p.id)}
+            setLike={setLike}
+            Like={Like}
+          />
         ))}
 
       </ul>

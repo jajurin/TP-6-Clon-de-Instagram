@@ -55,19 +55,18 @@
 .imagen-principal {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Evita que la imagen del gato se deforme o recorte mal */
+    object-fit: contain; 
 }
 
-/* --- COLUMNA DERECHA: INFORMACIÓN --- */
+
 .modal-derecha {
     flex: 0.9;
     display: flex;
-    flex-direction: column; /* Apila elementos verticalmente */
-    background-color: #070926; /* Color un tono más oscuro para contraste */
+    flex-direction: column; 
+    background-color: #070926; 
     border-left: 1px solid #1e224d;
 }
 
-/* 1. Header */
 .modal-header {
     display: flex;
     align-items: center;
@@ -99,17 +98,17 @@
     font-size: 12px;
 }
 
-/* 2. Zona central de comentarios (Se lleva el mayor espacio dinámico) */
+
 .modal-comentarios-area {
     flex: 1; 
-    overflow-y: auto; /* Scroll vertical independiente */
+    overflow-y: auto; 
     padding: 20px 15px;
     display: flex;
     flex-direction: column;
     gap: 18px;
 }
 
-/* Quitar scrollbar visual en navegadores modernos pero mantener funcionamiento */
+
 .modal-comentarios-area::-webkit-scrollbar {
     width: 6px;
 }
@@ -143,14 +142,12 @@
     color: white;
     margin-right: 6px;
 }
-
-/* Distinción sutil para la descripción original */
 .descripcion-post {
     padding-bottom: 15px;
     border-bottom: 1px solid rgba(30, 34, 77, 0.4);
 }
 
-/* 3. Footer de Acciones (Likes, Iconos) */
+
 .modal-footer-acciones {
     padding: 15px;
     border-top: 1px solid #1e224d;
@@ -191,7 +188,7 @@
     letter-spacing: 0.5px;
 }
 
-/* 4. Barra inferior fija "Agregar Comentario" */
+
 .modal-agregar-comentario {
     padding: 15px;
     border-top: 1px solid #1e224d;
@@ -217,7 +214,7 @@
 .btn-publicar {
     background: none;
     border: none;
-    color: #0095f6; /* Azul clásico de interacción de Instagram */
+    color: #0095f6; 
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
@@ -228,7 +225,6 @@
     color: white;
 }
 
-/* Animación de entrada suave del modal */
 @keyframes aparecerModal {
     from {
         transform: scale(1.05);
@@ -240,7 +236,7 @@
     }
 }
 
-/* Responsive para pantallas chicas: Apilar en vertical si la pantalla colapsa */
+
 @media (max-width: 800px) {
     .instagram-modal {
         flex-direction: column;
@@ -253,4 +249,8 @@
     .modal-derecha {
         flex: 1;
     }
+}
+.likeActivo path{
+    stroke: red !important;
+    fill: red !important;
 }

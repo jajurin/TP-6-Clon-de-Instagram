@@ -4,11 +4,16 @@ import './PublicacionDetail.css'
 interface PublicionDetailProps {
   PublicacioneElegida: Publicaciones
   onSelect: (id: number | null) => void
+
+  Like: boolean
+  setLike: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 function PublicionDetail({
   PublicacioneElegida,
-  onSelect
+  onSelect,
+  Like,
+  setLike
 }: PublicionDetailProps) {
 
 
@@ -84,7 +89,28 @@ function PublicionDetail({
             
             <div className="iconos-acciones">
 
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7 4C18.87 4 21 6.98 21 9.76C21 15.39 12.16 20 12 20C11.84 20 3 15.39 3 9.76C3 6.98 5.13 4 8.3 4C10.12 4 11.31 4.91 12 5.71C12.69 4.91 13.88 4 15.7 4Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+         <svg
+  onClick={(e) => {
+    e.stopPropagation()
+    setLike(!Like)
+  }}
+
+  className={Like ? "likeActivo" : ""}
+
+  viewBox="0 0 18 18"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+
+  <path
+  d="M1.24264 8.24264L8 15L14.7574 8.24264C15.553 7.44699 16 6.36786 16 5.24264V5.05234C16 2.8143 14.1857 1 11.9477 1C10.7166 1 9.55233 1.55959 8.78331 2.52086L8 3.5L7.21669 2.52086C6.44767 1.55959 5.28338 1 4.05234 1C1.8143 1 0 2.8143 0 5.05234V5.24264C0 6.36786 0.44699 7.44699 1.24264 8.24264Z"
+
+  stroke="white"
+  fill="transparent"
+  strokeWidth="1.5"
+/>
+
+</svg>
               
         
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 3.33782C15.5291 2.48697 13.8214 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525C3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L2.58151 19.8267C2.32295 20.793 3.20701 21.677 4.17335 21.4185L6.39939 20.8229C6.78393 20.72 7.19121 20.7791 7.54753 20.9565C8.88837 21.6244 10.4003 22 12 22C17.5228 22 22 17.5228 22 12C22 10.1786 21.513 8.47087 20.6622 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path></svg>

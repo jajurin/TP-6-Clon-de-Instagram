@@ -16,6 +16,7 @@ function App() {
   const [PublicacioneEle, setPublicacioneEle] = useState<Publicaciones | null>(null)
   const [Perfiles, setPerfiles] = useState<Perfiles[]>([])
   const [loading, setLoading] = useState(true)
+    const [like, setLike] = useState(false)
 
 
   useEffect(() => {
@@ -133,6 +134,8 @@ return (
     <Feed
       Publicaciones={Publicaciones}
       onSelect={handleSelectPublicacion}
+      setLike={setLike}
+      Like={like}
     />
   </>
 )}
@@ -141,6 +144,8 @@ return (
       <PublicionDetail
         PublicacioneElegida={PublicacioneEle}
         onSelect={handleSelectPublicacion}
+          setLike={setLike}
+          Like={like}
       />
     )}
 
