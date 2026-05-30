@@ -1,6 +1,15 @@
 import './PerfilUsuario.css'
-
-function PerfilUsuario({ Perfil }) {
+interface PerfilUsuarioProps {
+  Perfil: {
+    imagen: string
+    nombreUser: string
+    alias: string
+    seguidores: number
+    cantLike: number
+  }
+}
+function PerfilUsuario({ Perfil }: PerfilUsuarioProps) {
+    
 
     return (
 

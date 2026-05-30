@@ -16,7 +16,7 @@ function App() {
   const [PublicacioneEle, setPublicacioneEle] = useState<Publicaciones | null>(null)
   const [Perfiles, setPerfiles] = useState<Perfiles[]>([])
   const [loading, setLoading] = useState(true)
-    const [like, setLike] = useState(false)
+  const [like, setLike] = useState(false)
 
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-/* Backdrop oscuro que cubre toda la pantalla */
+
 .details-backdrop {
     position: fixed;
     top: 0;
@@ -12,7 +12,6 @@
     z-index: 2000;
 }
 
-/* Botón flotante para cerrar en la esquina superior derecha */
 .cerrar-modal {
     position: absolute;
     top: 20px;
@@ -29,23 +28,23 @@
     transform: scale(1.1);
 }
 
-/* Estructura del Modal estilo Instagram */
+
 .instagram-modal {
     display: flex;
     width: 85vw;
     max-width: 1100px;
     height: 85vh;
     max-height: 750px;
-    background-color: #0b0d2a; /* Integrado al fondo oscuro de tu app */
+    background-color: #0b0d2a; 
     border: 1px solid #1e224d;
-    border-radius: 4px; /* Instagram usa bordes casi rectos o muy sutiles */
+    border-radius: 4px; 
     overflow: hidden;
     animation: aparecerModal 0.2s cubic-bezier(0.1, 0.8, 0.25, 1);
 }
 
-/* --- COLUMNA IZQUIERDA: IMAGEN --- */
+
 .modal-izquierda {
-    flex: 1.2; /* Toma más espacio proporcional */
+    flex: 1.2; 
     background-color: #000;
     display: flex;
     align-items: center;

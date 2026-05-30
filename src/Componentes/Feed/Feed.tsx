@@ -1,7 +1,20 @@
 import Publicacion from "../Publicacion/Publicacion";
 import './Feed.css'
+import type { Publicaciones } from '../Interfaces/Publicaciones'
 
-function Feed({ Publicaciones, onSelect, setLike, Like }) {
+interface FeedProps {
+  Publicaciones: Publicaciones[]
+  onSelect: (id: number) => void
+  Like: boolean
+  setLike: (value: boolean) => void
+}
+
+function Feed({
+  Publicaciones,
+  onSelect,
+  setLike,
+  Like
+}: FeedProps) {
 
   return (
     <div className="feedContainer">
