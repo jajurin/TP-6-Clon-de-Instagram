@@ -60,19 +60,14 @@ const comentariosFake: Comentarios[] =
   respuestaComentarios.data.map(
     (quote: any, index: number) => ({
 
-      id: i * 10 + index,
+      id: index,
 
       texto: quote.quote,
 
       fecha: new Date(),
 
       usuario:
-        nuevosPerfiles[
-          Math.floor(
-            Math.random() *(99-
-            (nuevosPerfiles.length+1)) + nuevosPerfiles.length+1
-          )
-        ],
+        nuevosPerfiles[Math.floor(Math.random() * nuevosPerfiles.length)],
 
       likes:
         Math.floor(

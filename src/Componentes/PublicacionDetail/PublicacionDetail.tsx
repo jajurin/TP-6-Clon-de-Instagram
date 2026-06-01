@@ -72,15 +72,14 @@ return (
             <div key={comentario.id} className="comentario-item">
               <img
                 src={
-                  comentario.usuario?.imagen ||
-                  `https://picsum.photos/50/50?random=${comentario.id}`
+                  comentario.usuario.imagen
                 }
                 alt="User"
                 className="avatar-comentario"
               />
               <p>
                 <strong>
-                  {comentario.usuario?.nombreUser || 'usuario_anonimo'}
+                  {comentario.usuario.nombreUser}
                 </strong>{' '}
                 {comentario.texto}
               </p>
