@@ -1,4 +1,18 @@
 c/
+COMO EJECUTARLO:
+PASOS:
+PRIMERO:
+Tener instalado Node.js.
+EN TERMINAL
+SEGUNDO:
+Clonar el repositorio git clone <url-del-repo> cd TP-6-Clon-de-Instagram
+TERCERO
+Instalar dependencias (npm install)
+CUARTO
+Iniciar el proyecto ( npm run dev )
+QUINTO
+Acceder al navegador (http://localhost:5173/), recomendado mediante la terminal
+
 REFERENCIA: https://www.figma.com/community/file/1004033523744290376
 
 ESTRUCTURA Y COMPONENETES
@@ -191,4 +205,4 @@ Luego recorre el array de publicaciones utilizando map(). Cuando encuentra la pu
 Si liked era true, pasa a false.
 Si liked era false, pasa a true.
 
-intentamos usar useState pero eso causaba que todas las publicaicones se actualizaran
+Se decidió guardar el estado del like dentro de Publicaciones para que tanto el feed como PublicacionDetail trabajen con los mismos datos. De esta manera, cuando una publicación recibe o pierde un like, el cambio se refleja automáticamente en ambos lugares.
