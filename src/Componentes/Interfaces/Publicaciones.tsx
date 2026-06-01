@@ -10,4 +10,5 @@ export interface Publicaciones {
    comentarios: Comentarios[];
     fecha: Date;
     perfil: Perfiles;
+    liked: boolean 
 }

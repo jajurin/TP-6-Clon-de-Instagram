@@ -5,15 +5,13 @@ import type { Publicaciones } from '../Interfaces/Publicaciones'
 interface FeedProps {
   Publicaciones: Publicaciones[]
   onSelect: (id: number) => void
-  Like: boolean
-  setLike: (value: boolean) => void
+  toggleLike: (id: number) => void
 }
 
 function Feed({
   Publicaciones,
   onSelect,
-  setLike,
-  Like
+ toggleLike
 }: FeedProps) {
 
   return (
@@ -28,8 +26,7 @@ function Feed({
             key={p.id}
             publicacion={p}
             onSelect={() => onSelect(p.id)}
-            setLike={setLike}
-            Like={Like}
+            toggleLike={toggleLike}
           />
         ))}
 

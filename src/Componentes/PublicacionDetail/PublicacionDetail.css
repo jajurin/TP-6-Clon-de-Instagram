@@ -154,6 +154,7 @@
     flex-direction: column;
     gap: 8px;
     background-color: #070926;
+ 
 }
 
 .iconos-acciones {
@@ -166,7 +167,7 @@
     width: 24px;
     height: 24px;
     cursor: pointer;
-    transition: transform 0.1s ease;
+
 }
 
 .iconos-acciones svg:hover {
@@ -252,4 +253,5 @@
 .likeActivo path{
     stroke: red !important;
     fill: red !important;
+
 }

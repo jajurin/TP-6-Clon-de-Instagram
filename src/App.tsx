@@ -16,7 +16,7 @@ function App() {
   const [PublicacioneEle, setPublicacioneEle] = useState<Publicaciones | null>(null)
   const [Perfiles, setPerfiles] = useState<Perfiles[]>([])
   const [loading, setLoading] = useState(true)
-  const [like, setLike] = useState(false)
+
 
 
   useEffect(() => {
@@ -90,7 +90,8 @@ const comentariosFake: Comentarios[] =
           descripcion: `Gatito numero ${i} en accion`,
           cantLike: Math.floor(Math.random() * 1000),
           comentarios: comentariosFake,
-          fecha: new Date()
+          fecha: new Date(),
+          liked: false 
         })
       }
 
@@ -112,6 +113,19 @@ const comentariosFake: Comentarios[] =
     )
     setPublicacioneEle(publiEncontrada ?? null)
   }
+ 
+ const toggleLike = (id: number) => {
+  setPublicaciones(prev =>
+    prev.map(publi =>
+      publi.id === id
+        ? {
+            ...publi,
+            liked: !publi.liked
+          }
+        : publi
+    )
+  )
+}
 
 
 return (
@@ -134,8 +148,7 @@ return (
     <Feed
       Publicaciones={Publicaciones}
       onSelect={handleSelectPublicacion}
-      setLike={setLike}
-      Like={like}
+      toggleLike={toggleLike}
     />
   </>
 )}
@@ -144,8 +157,8 @@ return (
       <PublicionDetail
         PublicacioneElegida={PublicacioneEle}
         onSelect={handleSelectPublicacion}
-          setLike={setLike}
-          Like={like}
+        toggleLike={toggleLike}
+          Publicaciones={Publicaciones}
       />
     )}
 
